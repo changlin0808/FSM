@@ -8,16 +8,16 @@ enum eState
 };
 
 // 状态基类
-class StateBasic
+class StateBase
 {
 public:
-	virtual ~StateBasic();
+	virtual ~StateBase();
 	virtual void Enter();
 	virtual void Execute();
 	virtual void Exit();
 };
 
-class State_Idle : public StateBasic
+class State_Idle : public StateBase
 {
 };
 
@@ -41,7 +41,7 @@ public:
 	void Execute();
 
 private:
-	std::map<eState, StateBasic*>	m_States;	//状态集
+	std::map<eState, StateBase*>	m_States;	//状态集
 	eState							m_Curstate;	//当前状态
 };
 

@@ -1,21 +1,21 @@
 
 
-StateBasic::~StateBasic()
+StateBase::~StateBase()
 {
 
 }
 
-void StateBasic::Enter()
+void StateBase::Enter()
 {
 
 }
 
-void StateBasic::Execute()
+void StateBase::Execute()
 {
 
 }
 
-void StateBasic::Exit()
+void StateBase::Exit()
 {
 
 }
