@@ -1,1 +1,47 @@
 #pragma once
+#include <map>
+
+// ×´Ì¬Ã¶¾Ù
+enum eState
+{
+	eState_Idle,
+};
+
+// ×´Ì¬»ùÀà
+class StateBasic
+{
+public:
+	virtual ~StateBasic();
+	virtual void Enter();
+	virtual void Execute();
+	virtual void Exit();
+};
+
+class State_Idle : public StateBasic
+{
+};
+
+// ÓÐÏÞ×´Ì¬»ú
+class FSM
+{
+public:
+	// ×´Ì¬×¢²á
+	int Register(eState State);
+
+	// ×´Ì¬×¢Ïú
+	int UnRegister(eState State);
+
+	// ×´Ì¬ÇÐ»»
+	void ChangeState(eState NewState);
+
+	// ×´Ì¬ÊÇ·ñ´æÔÚ
+	bool IsExit(eState State);
+
+	// µ±Ç°×´Ì¬µÄtick
+	void Execute();
+
+private:
+	std::map<eState, StateBasic*>	m_States;	//×´Ì¬¼¯
+	eState							m_Curstate;	//µ±Ç°×´Ì¬
+};
+
