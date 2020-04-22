@@ -6,7 +6,7 @@ enum eState
 {
 	eState_Idle,
 };
-
+ 
 // ×´Ì¬»ùÀà
 class StateBase
 {
